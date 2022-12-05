@@ -7,6 +7,7 @@ import (
 
 // Part1 solves the first part of the day's puzzle
 func Part1(ctx context.Context, input string) (interface{}, error) {
+	input = strings.TrimSpace(input)
 	games := strings.Split(input, "\n")
 
 	var total int

@@ -2,12 +2,12 @@ package main
 
 import (
 	"context"
-	"log"
 	"strings"
 )
 
 // Part2 solves the second part of the day's puzzle
 func Part2(ctx context.Context, input string) (interface{}, error) {
+	input = strings.TrimSpace(input)
 	games := strings.Split(input, "\n")
 
 	var total int
@@ -24,8 +24,6 @@ func Part2(ctx context.Context, input string) (interface{}, error) {
 		}
 
 		me := opp.ToGetResult(res)
-		log.Println(res)
-		log.Println(me)
 		total += int(me.Vs(opp)) + int(me)
 	}
 
